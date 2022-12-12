@@ -45,7 +45,7 @@ export const FlowerForm = () => {
     })
       .then((response) => response.json())
       .then(() => {
-        navigate("/plants");
+        navigate("/home");
       });
   };
 
@@ -75,7 +75,7 @@ export const FlowerForm = () => {
           <label htmlFor="feedingSchedule">Feeding Schedule:</label>
           <input
             required
-            autoFocus
+            
             type="text"
             className="form-control"
             placeholder="Weekly, Biweekly, Monthly..."
@@ -93,7 +93,7 @@ export const FlowerForm = () => {
           <label htmlFor="sunSchedule">Sun Schedule:</label>
           <input
             required
-            autoFocus
+            
             type="text"
             className="form-control"
             placeholder="Shade, Part Sun, Full Sun..."
@@ -111,10 +111,10 @@ export const FlowerForm = () => {
           <label htmlFor="notes">Notes:</label>
           <input
             required
-            autoFocus
+            
             type="text"
             className="form-control"
-            placeholder=""
+            placeholder="Notes About Your Plant..."
             value={flower.notes}
             onChange={(event) => {
               const copy = { ...flower };

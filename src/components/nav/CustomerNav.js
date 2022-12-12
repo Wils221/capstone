@@ -7,16 +7,19 @@ export const CustomerNav = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/tickets">Tickets</Link>
+                <Link className="navbar__link" to="/home">Home</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/profile">Profile</Link>
-            </li>            
-            {
-                localStorage.getItem("honey_user")
+                <Link className="navbar__link" to="/FlowerForm">Add Flower</Link>
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/users">Users</Link>
+            </li>
+                      {
+                localStorage.getItem("flower_user")
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
-                            localStorage.removeItem("honey_user")
+                            localStorage.removeItem("flower_user")
                             navigate("/", {replace: true})
                         }}>Logout</Link>
                     </li>

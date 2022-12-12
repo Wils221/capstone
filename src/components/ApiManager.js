@@ -28,8 +28,8 @@ export const getAllEmployees = () => {
 }
 
 //Exports to Customer Form to get current customer by user Id
-export const getCurrentCustomer = (honeyUserObject, setProfile) => {
-    fetch(`http://localhost:8088/customers?userId=${honeyUserObject.id}`)
+export const getCurrentCustomer = (flowerUserObject, setProfile) => {
+    fetch(`http://localhost:8088/customers?userId=${flowerUserObject.id}`)
     .then(response => response.json())
         .then(dataFromCustomersArrayForCurrentUser => setProfile(dataFromCustomersArrayForCurrentUser[0]))
 }
@@ -46,8 +46,8 @@ export const saveCustomerUpdates = (profile) => {
 .then(response => response.json())}
 
 //Exports to Employee Form to get current employee by user Id
-export const getCurrentEmployee = (honeyUserObject, setProfile) => {
-    fetch(`http://localhost:8088/employees?userId=${honeyUserObject.id}`)
+export const getCurrentEmployee = (flowerUserObject, setProfile) => {
+    fetch(`http://localhost:8088/employees?userId=${flowerUserObject.id}`)
     .then(response => response.json())
         .then(dataFromEmployeesArrayForCurrentUser => setProfile(dataFromEmployeesArrayForCurrentUser[0]))
 }

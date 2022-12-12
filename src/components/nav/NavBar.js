@@ -4,10 +4,10 @@ import { EmployeeNav } from "./EmployeeNav"
 import "./NavBar.css"
 
 export const NavBar = () => {
-    const localHoneyUser = localStorage.getItem("honey_user")
-	const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlowerUser = localStorage.getItem("flower_user")
+	const flowerUserObject = JSON.parse(localFlowerUser)
 
-	if (honeyUserObject.staff) {
+	if (flowerUserObject.staff) {
 		return <EmployeeNav/>
 	}
 	else {

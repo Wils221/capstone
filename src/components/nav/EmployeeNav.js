@@ -10,6 +10,9 @@ export const EmployeeNav = () => {
                 <Link className="navbar__link" to="/home">Home</Link>
             </li>
             <li className="navbar__item active">
+                <Link className="navbar__link" to="/FlowerForm">Add Flower</Link>
+            </li>
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/users">Users</Link>
             </li>
                       {

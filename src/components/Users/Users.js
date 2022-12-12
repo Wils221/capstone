@@ -43,7 +43,7 @@ const getAllUsers = () => {
   
  return (
 <>
- {users.map((userObj) => {return <div id={userObj.id}>{userObj.fullName} {deleteButton(userObj.id)}</div> }
+ {users.map((userObj) => {return <div id={userObj.id}> <Link to={`/flowers/${userObj.id}`}>{userObj.fullName} </Link> {deleteButton(userObj.id)}</div> }
  
  )
   }

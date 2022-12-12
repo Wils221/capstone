@@ -5,23 +5,25 @@ import { useParams } from "react-router-dom";
 
 export const FlowerEdit = () => {
     const {flowerId} = useParams()
-    const [plant, setPlant]= useState({})
+   // const [flower, setFlower]= useState({})
+ /* TODO: Add the correct default properties to the
+    initial state object
+    */
+    const [flower, update] = useState({
+      name: "",
+      feedingSchedule: "",
+      sunSchedule: "",
+      notes: "",
+      imageUrl: "",
+      makePrivate: false,
+    });
+
 useEffect(()=>{
     fetch(`http://localhost:8088/plants?id=${flowerId}`)
     .then(res => res.json())
-    .then((data)=>{setPlant(data[0])})
-},[] )
-  /* TODO: Add the correct default properties to the
-    initial state object
-    */
-  const [flower, update] = useState({
-    name: "",
-    feedingSchedule: "",
-    sunSchedule: "",
-    notes: "",
-    imageUrl: "",
-    makePrivate: false,
-  });
+    .then((data)=>{update(data[0])})
+},[flowerId] )
+  
   /*  TODO: Use the useNavigation() hook so you can redirect
     the user to the ticket list
     */
@@ -33,28 +35,17 @@ useEffect(()=>{
   const handleSaveButtonClick = (event) => {
     event.preventDefault();
 
-    /* TODO: Create the object to be saved to the API when submit ticket button is pushed */
-    const flowerToSendToAPI = {
-      userId: flowerUserObject.id,
-      name: flower.name,
-      feedingSchedule: flower.feedingSchedule,
-      sunSchedule: flower.sunSchedule,
-      notes: flower.notes,
-      imageUrl: flower.imageUrl,
-      makePrivate: flower.makePrivate,
-    };
-
-    /* TODO: Perform the fetch() to POST the object to the API */
-    return fetch(`http://localhost:8088/plants`, {
-      method: "POST",
+    /* TODO: Perform the fetch() to PUT the object to the API */
+    return fetch(`http://localhost:8088/plants/${flowerId}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(flowerToSendToAPI),
+      body: JSON.stringify(flower),
     })
       .then((response) => response.json())
       .then(() => {
-        navigate("/plants");
+        navigate("/home");
       });
   };
 
@@ -69,7 +60,7 @@ useEffect(()=>{
             autoFocus
             type="text"
             className="form-control"
-            defaultValue={plant.name}
+            defaultValue={flower.name}
             onChange={(event) => {
               const copy = { ...flower };
               copy.name = event.target.value;
@@ -85,7 +76,7 @@ useEffect(()=>{
             required
             type="text"
             className="form-control"
-            value={plant.feedingSchedule}
+            defaultValue={flower.feedingSchedule}
             onChange={(event) => {
               const copy = { ...flower };
               copy.feedingSchedule = event.target.value;
@@ -101,7 +92,7 @@ useEffect(()=>{
             required
             type="text"
             className="form-control"
-            value={plant.sunSchedule}
+            defaultValue={flower.sunSchedule}
             onChange={(event) => {
               const copy = { ...flower };
               copy.sunSchedule = event.target.value;
@@ -117,7 +108,7 @@ useEffect(()=>{
             required
             type="text"
             className="form-control"
-            value={plant.notes}
+            defaultValue={flower.notes}
             onChange={(event) => {
               const copy = { ...flower };
               copy.notes = event.target.value;
@@ -134,7 +125,7 @@ useEffect(()=>{
             id="imgUrl"
             type="text"
             className="form-control"
-            value={plant.imageUrl}
+            defaultValue={flower.imageUrl}
             onChange={(event) => {
               const copy = { ...flower }
               copy.imageUrl = event.target.value
@@ -149,7 +140,7 @@ useEffect(()=>{
           <label htmlFor="name">Mark Private:</label>
           <input
             type="checkbox"
-            value={plant.makePrivate}
+            defaultValue={flower.makePrivate}
             onChange={(event) => {
               const copy = { ...flower };
               copy.makePrivate = event.target.checked;
@@ -162,7 +153,7 @@ useEffect(()=>{
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
         className="btn btn-primary"
       >
-        Add Flower
+        Edit Flower
       </button>
     </form>
   );

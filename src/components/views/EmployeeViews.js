@@ -3,6 +3,7 @@ import { AllPlants } from "../Flowers/AllFlowers";
 import { FlowerForm } from "../Flowers/AddFlowerForm";
 import { FlowerEdit } from "../Flowers/FlowerEdit";
 import { AllUsers } from "../Users/Users";
+import { FlowerProfile } from "../Flowers/FlowerProfile";
 
 export const EmployeeViews = () => {
   return (
@@ -23,6 +24,7 @@ export const EmployeeViews = () => {
       <Route path="/FlowerForm" element={<FlowerForm />}></Route>
       <Route path="/edit/:flowerId" element={<FlowerEdit />}></Route>
       <Route path="/users" element={<AllUsers />}></Route>
+      <Route path="/flowers/:userId" element={<FlowerProfile />}></Route>
     </Routes>
   );
 };
