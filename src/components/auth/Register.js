@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-//import background from "../video/background.mp4"
+import background from "../video/background.mp4"
 
 export const Register = (props) => {
     const [user, setUser] = useState({
@@ -56,7 +56,7 @@ export const Register = (props) => {
 
     return (
         <main className="container--login">
-            {/* <video autoPlay loop muted
+            <video autoPlay loop muted
             style={{
                 position: "absolute",
                 width:"100%",
@@ -69,7 +69,7 @@ export const Register = (props) => {
 
             }}>
                 <source src={background} type="video/mp4"/>
-            </video> */}
+            </video>
         
         
         

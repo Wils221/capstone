@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
-//import background from "../video/background.mp4"
+import background from "../video/background.mp4"
 export const Login = () => {
     const [email, set] = useState("")
     const navigate = useNavigate()
@@ -31,7 +31,7 @@ export const Login = () => {
     return (
         
         <main className="container--login">
-            {/* <video autoPlay loop muted
+            {<video autoPlay loop muted
             style={{
                 position: "absolute",
                 width:"100%",
@@ -44,7 +44,7 @@ export const Login = () => {
 
             }}>
                 <source src={background} type="video/mp4"/>
-            </video> */}
+            </video> }
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Flower Power</h1>
