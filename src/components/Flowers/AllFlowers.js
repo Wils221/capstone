@@ -21,7 +21,7 @@ export const AllPlants = () => {
 
   return (
     
-    <div >
+    <div>
         <img className="login-background-picture" src="https://res.cloudinary.com/dsbznhfvn/image/upload/v1671134863/bg2_qlztgp.webp"/>
     
     
@@ -48,7 +48,7 @@ export const AllPlants = () => {
                   <div>
                     {" "}
                     {userobj ? (
-                      <div>
+                      <div className="card-buttons">
                         <button
                           className="plant-edit"
                           onClick={() => navigate(`/edit/${plantObj.id}`)}

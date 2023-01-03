@@ -39,13 +39,15 @@ label {
 }
 button {
   font-family: "Montserrat Alternates", sans-serif;
-  background-color: rgb(21, 54, 76);
-  display: block;
+  background-color: #22577a;
+ 
   display: inline-block;
   width: 8rem;
   height: 2rem;
   color: white;
   font-size: medium;
+  border: 2px solid #FFDD4A;
+  border-radius: 20px;
  
 }
 
@@ -70,13 +72,16 @@ p {
   margin: 10px;
   perspective: 1000px;
   
+  
 }
 .plant-img {
   height: 300px;
   width: 300px;
   margin: 1rem;
-  box-shadow: 4px 3px 4px #c7f9cc;
+  box-shadow: 5px 4px 5px #FFDD4A;
   cursor: pointer;
+  border: 1px solid #FFDD4A;
+  border-radius: 15px;
 }
 
 /* This container is needed to position the front and back side */
@@ -84,9 +89,10 @@ p {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
+  text-align:center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -101,35 +107,42 @@ p {
   width: 100%;
   height: 100%;
   font-family: "Montserrat Alternates", sans-serif;
-  font-size: x-large;
+  font-size: 1.5rem;
   backface-visibility: hidden;
+  border: 1px solid #FFDD4A;
+  border-radius: 20px;
+
 }
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: rgb(34, 87, 122);
+  background-color: #22577a;
   color: #c7f9cc;
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: rgb(34, 87, 122);
-  color: rgb(246, 249, 48, .95);
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: #22577a;
+  color: white;
   transform: rotateY(180deg);
+  
 }
 .plant-edit {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: large;
-  color: #f6f930;
-  background-color: #38a3a5;
+  color: white;
+  background-color: #15364c;
   margin: 10px;
+  border: 2px solid white;
 }
 .plant-delete {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: large;
-  color: #f6f930;
-  background-color: #38a3a5;
+  color: white;
+  background-color: #15364c;
   margin: 10px;
+  border: 2px solid white;
 }
 body {
   font-family: "Montserrat Alternates", sans-serif;
@@ -172,5 +185,12 @@ a:link {
 }
 a:visited {
 text-decoration: none;
+}
+.card-buttons {
+position: fixed;
+bottom: 0;
+display: flex;
+padding-left: 27px;
+
 }
 
