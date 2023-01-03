@@ -12,8 +12,7 @@ export const EmployeeViews = () => {
         path="/home"
         element={
           <>
-            <h1>Flower Power</h1>
-            <div>My Garden</div>
+            <h6 className="garden-header">My Garden</h6>
 
             <Outlet />
           </>

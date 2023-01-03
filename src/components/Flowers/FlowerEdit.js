@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import "./Flowers.css";
 
 
 export const FlowerEdit = () => {
@@ -50,8 +51,10 @@ useEffect(()=>{
   };
 
   return (
-    <form className="FlowerForm">
-      <h2 className="FlowerForm__title">New Flower</h2>
+    <div >
+    <img className="login-background-picture" src="https://res.cloudinary.com/dsbznhfvn/image/upload/v1671134863/bg2_qlztgp.webp"/>
+    <form className="EditFlowerForm">
+      <h2 className="EditFlowerForm__title">Edit Flower</h2>
       <fieldset>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
@@ -71,7 +74,7 @@ useEffect(()=>{
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="feedingSchedule">Feeding Schedule:</label>
+          <label htmlFor="feedingSchedule">Water:</label>
           <input
             required
             type="text"
@@ -87,7 +90,7 @@ useEffect(()=>{
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="sunSchedule">Sun Schedule:</label>
+          <label htmlFor="sunSchedule">Sun:</label>
           <input
             required
             type="text"
@@ -151,10 +154,10 @@ useEffect(()=>{
       </fieldset>
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="btn btn-primary"
+        className="edit-flower-button"
       >
         Edit Flower
       </button>
-    </form>
+    </form></div>
   );
 };

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Flowers.css";
 
 export const FlowerForm = () => {
   /* TODO: Add the correct default properties to the
@@ -50,7 +51,9 @@ export const FlowerForm = () => {
   };
 
   return (
-    <form className="FlowerForm">
+    <div >
+    <img className="login-background-picture" src="https://res.cloudinary.com/dsbznhfvn/image/upload/v1671134863/bg2_qlztgp.webp"/>
+    <form className="addFlowerForm">
       <h2 className="FlowerForm__title">New Flower</h2>
       <fieldset>
         <div className="form-group">
@@ -72,7 +75,7 @@ export const FlowerForm = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="feedingSchedule">Feeding Schedule:</label>
+          <label htmlFor="feedingSchedule">Water:</label>
           <input
             required
             
@@ -90,7 +93,7 @@ export const FlowerForm = () => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="sunSchedule">Sun Schedule:</label>
+          <label htmlFor="sunSchedule">Sun:</label>
           <input
             required
             
@@ -159,10 +162,10 @@ export const FlowerForm = () => {
       </fieldset>
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className="btn btn-primary"
+        className="add-flower.button"
       >
         Add Flower
       </button>
-    </form>
+    </form></div>
   );
 };

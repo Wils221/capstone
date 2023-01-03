@@ -5,6 +5,7 @@ import "./Flowers.css";
 export const FlowerProfile = () => {
   const { userId } = useParams();
   const [plants, setPlants] = useState([]);
+  const [filteredPlants, setFilteredPlants] = useState([]);
   const navigate = useNavigate();
   const localUser = localStorage.getItem("flower_user");
   const userobj = JSON.parse(localUser);
@@ -12,7 +13,11 @@ export const FlowerProfile = () => {
     fetch(`http://localhost:8088/plants?userId=${userId}`)
       .then((response) => response.json())
       .then((plantsArray) => {
-        setPlants(plantsArray);
+        const publicPlants = plantsArray.filter(
+          (plant) => plant.makePrivate === false
+        );
+        setPlants(publicPlants);
+        //setPlants(plantsArray);
       });
   }, []);
   //conditionally render a popup of the item edit form here
@@ -21,31 +26,36 @@ export const FlowerProfile = () => {
   const navigateToFlowerProfile = (plantId) => {
     navigate(`/${plantId}`);
   };
+
   return (
-    <div className="plants-container">
+    <div >
+    <img className="login-background-picture" src="https://res.cloudinary.com/dsbznhfvn/image/upload/v1671134863/bg2_qlztgp.webp"/>
+    <div className="card-container">
       {plants.map((plantObj) => {
         return (
-          <div className="plant-card" key={plantObj.id}>
-            <img
-              src={plantObj.imageUrl}
-              alt={plantObj.name}
-              className="plant-img"
-              onClick={() => {
-                navigateToFlowerProfile(plantObj.id);
-              }}
-            />
+          <div className="flip-card" key={plantObj.id}>
+            <div className="flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <img
+                    src={plantObj.imageUrl}
+                    alt={plantObj.name}
+                    className="plant-img"
+                    />
+                    </div>           
+            <div className="flip-card-back">
             <div className="plant-name">Name: {plantObj.name}</div>
             <div className="plant-name">
-              Feeding Schedule: {plantObj.feedingSchedule}
+              Water: {plantObj.feedingSchedule}
             </div>
             <div className="plant-name">
-              Sun Schedule: {plantObj.sunSchedule}
+              Sun: {plantObj.sunSchedule}
             </div>
             <div className="plant-name">Notes: {plantObj.notes}</div>
           </div>
-        );
+          </div></div>
+        </div>);
       })}
-    </div>
+    </div></div>
   );
 };
-

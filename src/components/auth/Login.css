@@ -1,5 +1,8 @@
 .h1, h1 {
-    font-size: 2.5rem;
+    font-size: 4rem;
+}
+.h2 {
+    font-size: xx-large;
 }
 
 fieldset {
@@ -7,6 +10,7 @@ fieldset {
     padding: 1rem 0;
     margin: 0;
     border: 0;
+    text-align: center;
 }
 
 .form--login {
@@ -14,19 +18,39 @@ fieldset {
     margin: 0 auto;
     text-align: left;
 }
-
+.form--login > h1, h2 {
+    display: flex;
+    flex: content;
+    text-align: center;
+}
+.form--login > fieldset {
+ 
+  width: 400px;
+  margin:auto;
+ 
+}
 .form--login > fieldset > input[type="email"] {
+    display: flex;
+    flex: content;
     width: 25em;
+    text-align: center;
 }
 
+.form--login > fieldset > input[type="text"] {
+    display: flex;
+    flex: content;
+    width: 25em;
+    text-align: center;
+}
 .label--login {
     width: 8rem;
     display: inline-block;
 }
-
 .form-control {
     display: block;
-    width: 94%;
+    text-align: center;
+    width: 30rem;
+    margin: auto;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -46,7 +70,12 @@ fieldset {
 }
 
 .form--login {
-    background-position-x: right;
+   
+    display: inline-block;
+    margin: 80px auto;
+    text-align: left;
+    padding: 5px 20px;
+    background-position-x: center;
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;
@@ -59,4 +88,19 @@ fieldset {
     position: relative;
     bottom: -2rem;
 }
+.link--register{
+    color: white;
+    font-size: 1rem;
+
+}
+a:link {
+    text-decoration: none;
+    color: white;
+  }
+  a:visited {
+  text-decoration: none;
+  
+
+  }
+
 
