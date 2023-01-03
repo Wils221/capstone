@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap");
+
+.users {
+    font-size: 2rem;
+    color: #15364c;
+    text-decoration-color: #15364c;
+
+    
+   
+}
+.userDiv {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 1em;
+    color: #15364c;
+}
+.login-background-picture {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    opacity: 20%;
+    height: 100%;
+    z-index: -1;
+  }
+  

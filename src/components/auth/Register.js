@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
+//import background from "../video/background.mp4"
 
 export const Register = (props) => {
     const [user, setUser] = useState({
@@ -54,9 +55,26 @@ export const Register = (props) => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
+        <main className="container--login">
+            {/* <video autoPlay loop muted
+            style={{
+                position: "absolute",
+                width:"100%",
+                left:"50%",
+                top:"50%",
+                height: "100%",
+                objectFit:"cover",
+                transform:"translate(-50%, -50%",
+                zIndex: "-1"
+
+            }}>
+                <source src={background} type="video/mp4"/>
+            </video> */}
+        
+        
+        
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Flower Power</h1>
+                <h1>Please Register for Flower Power</h1>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateUser}

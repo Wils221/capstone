@@ -1,16 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400&display=swap");
+
+
 .navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+  display: flex;
+  font-family: "Montserrat Alternates", sans-serif;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  text-align: center;
+  
+  background-color: #22577a;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 1px 3px 4px grey;
+}
+.navbar__link {
+  font-size: x-large;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: white;
 }
 
 .navbar__item {
-    flex-basis: 20%;
-    list-style-type: none;
+ 
+  flex-basis: 20%;
+  list-style-type: none;
 }
 
 .navbar__logout {
-    flex-basis: 20%;
-    list-style-type: none;
+  flex-basis: 20%;
+  list-style-type: none;
 }
-
